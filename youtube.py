@@ -750,7 +750,7 @@ if selected == "🏠 Home":
     st.markdown("[Google Developer Console](https://console.cloud.google.com/cloud-resource-manager?authuser=1)")
     st.markdown("[Youtube API Reference](https://developers.google.com/youtube/v3/getting-started)")
     st.markdown("[Streamlit Documentation](https://docs.streamlit.io/library/api-reference)")
-    st.markdown("[Need to create GIThup link here]()")
+    st.markdown("[https://github.com/selshiyaxavier/YouTube_data_analaysis.git]()")
 
 if selected == "⚙️ Fetch and Export Data":
     url_input = st.text_input("Paste Youtube URL or Channel ID")
