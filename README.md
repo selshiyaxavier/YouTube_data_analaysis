@@ -13,7 +13,7 @@ The YouTube Data Harvesting and Warehousing Project is an interactive dashboard 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/stephanrpicloud/YouTube-Data-harvesting-project-   
+   git clone https://github.com/selshiyaxavier/YouTube_data_analaysis.git   
    ```
 
 2. Install the required dependencies:
@@ -25,12 +25,11 @@ The YouTube Data Harvesting and Warehousing Project is an interactive dashboard 
 3. Run the Streamlit application:
 
    ```bash
-   streamlit run app.py
+   streamlit run Youtube.py
    ```
 
 4. Navigate through the menu options to explore the various functionalities of the dashboard:
    - **Fetch and Export Data:** Retrieve channel data using unique channel IDs or YouTube links. Store the data in MongoDB and migrate it to a SQL database.
-   - **SQL Analysis:** Explore and retrieve data from the SQL database using different search options.
    - **Channel Analysis:** Explore YouTube channel trends and compare channel details stored in the database.
    - **Video Analysis:** Analyze video statistics stored in the database and compare video performances.
 
@@ -46,5 +45,5 @@ Contributions are welcome! If you find any bugs or have suggestions for improvem
 
 - This project uses Streamlit for the interactive web application.
 - Data retrieval is facilitated by the YouTube Data API.
-- Data storage is managed using MongoDB and SQL databases.
+- Data storage is managed using MongoDB database.
 - Data analysis and visualization are performed using Pandas and Matplotlib.
