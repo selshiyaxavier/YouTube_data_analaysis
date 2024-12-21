@@ -738,14 +738,14 @@ if selected == "🏠 Home":
     # Get Started Section
     st.header("Get Started:")
     st.markdown("Simply navigate through the menu options to explore the various functionalities of the dashboard:")
-    st.markdown("- **Fetch and Eport Data**: From this section, we can get channels data using channels unique ID or YouTube link. And we can store the data to MongoDB from that Migrate SQL database")
+    st.markdown("- **Fetch and Eport Data**: From this section, we can get channels data using channels unique ID or YouTube link. And we can store the data to MongoDB")
     st.markdown("- **Channel analysis**: From this section we gonna explore YouTube Channels trends of your favorite YouTube creators! with comparing each others")
     st.markdown("- **Video analysis**: From this section we gonna explore analysis in videos form the their channel")
 
     # About the Project Section
     st.header("About the Project:")
     st.markdown("""
-    This project leverages Streamlit, Google API, MongoDB, and SQL databases to deliver a seamless and intuitive user experience for YouTube data analysis. Designed with simplicity and functionality in mind, our dashboard empowers users to make informed decisions based on comprehensive channel insights.
+    This project leverages Streamlit, Google API, MongoDB to deliver a seamless and intuitive user experience for YouTube data analysis. Designed with simplicity and functionality in mind, our dashboard empowers users to make informed decisions based on comprehensive channel insights.
     """)
     st.markdown("[Google Developer Console](https://console.cloud.google.com/cloud-resource-manager?authuser=1)")
     st.markdown("[Youtube API Reference](https://developers.google.com/youtube/v3/getting-started)")
