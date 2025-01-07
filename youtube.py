@@ -718,40 +718,42 @@ with st.container():
         )
     
 if selected == "🏠 Home":
-    st.markdown(
-    "<h2 style='text-align: center;'> Welcome to YouTube Data Harvesting and Analysis Project </h2>",
-    unsafe_allow_html=True
-    )
-    # Title and Description
-    st.markdown("This interactive dashboard empowers you to explore and analyze data from multiple YouTube channels effortlessly. Whether you're a content creator, marketer, or analyst, this tool provides valuable insights to inform your decisions and strategies.")
-
-    # Key Features Section
-    st.header("Key Features:")
-    st.markdown("""
-    1. **Retrieve Channel Data**: Enter a YouTube channel ID to access essential metrics such as channel name, subscriber count, total video count, playlist ID, video ID, likes, dislikes, and comments for each video.
-    
-    2. **Store Data in MongoDB**: Seamlessly store channel data in a MongoDB data lake, ensuring efficient management of unstructured and semi-structured data.
-
-    3. **Intuitive Data Visualization**: Utilize Streamlit's data visualization capabilities to create interactive charts and graphs, enabling easy interpretation and analysis of the retrieved data.
-    """)
-
-    # Get Started Section
-    st.header("Get Started:")
-    st.markdown("Simply navigate through the menu options to explore the various functionalities of the dashboard:")
-    st.markdown("- **Fetch and Eport Data**: From this section, we can get channels data using channels unique ID or YouTube link. And we can store the data to MongoDB")
-    st.markdown("- **Channel analysis**: From this section we gonna explore YouTube Channels trends of your favorite YouTube creators! with comparing each others")
-    st.markdown("- **Video analysis**: From this section we gonna explore analysis in videos form the their channel")
-
-    # About the Project Section
-    st.header("About the Project:")
-    st.markdown("""
-    This project leverages Streamlit, Google API, MongoDB to deliver a seamless and intuitive user experience for YouTube data analysis. Designed with simplicity and functionality in mind, our dashboard empowers users to make informed decisions based on comprehensive channel insights.
-    """)
-    st.markdown("[Google Developer Console](https://console.cloud.google.com/cloud-resource-manager?authuser=1)")
-    st.markdown("[Youtube API Reference](https://developers.google.com/youtube/v3/getting-started)")
-    st.markdown("[Mongodb Documentation](https://www.mongodb.com/docs/)")
-    st.markdown("[Streamlit Documentation](https://docs.streamlit.io/library/api-reference)")
-    st.markdown("[GitHub Repositories](https://github.com/selshiyaxavier/YouTube_data_analaysis.git)")
+  cl1,cl2,cl3 = st.columns([1,8,1])
+  with cl2:
+      st.markdown(
+      "<h2 style='text-align: center;'> Welcome to YouTube Data Harvesting and Analysis Project </h2>",
+      unsafe_allow_html=True
+      )
+      # Title and Description
+      st.markdown("This interactive dashboard empowers you to explore and analyze data from multiple YouTube channels effortlessly. Whether you're a content creator, marketer, or analyst, this tool provides valuable insights to inform your decisions and strategies.")
+  
+      # Key Features Section
+      st.header("Key Features:")
+      st.markdown("""
+      1. **Retrieve Channel Data**: Enter a YouTube channel ID to access essential metrics such as channel name, subscriber count, total video count, playlist ID, video ID, likes, dislikes, and comments for each video.
+      
+      2. **Store Data in MongoDB**: Seamlessly store channel data in a MongoDB data lake, ensuring efficient management of unstructured and semi-structured data.
+  
+      3. **Intuitive Data Visualization**: Utilize Streamlit's data visualization capabilities to create interactive charts and graphs, enabling easy interpretation and analysis of the retrieved data.
+      """)
+  
+      # Get Started Section
+      st.header("Get Started:")
+      st.markdown("Simply navigate through the menu options to explore the various functionalities of the dashboard:")
+      st.markdown("- **Fetch and Eport Data**: From this section, we can get channels data using channels unique ID or YouTube link. And we can store the data to MongoDB")
+      st.markdown("- **Channel analysis**: From this section we gonna explore YouTube Channels trends of your favorite YouTube creators! with comparing each others")
+      st.markdown("- **Video analysis**: From this section we gonna explore analysis in videos form the their channel")
+  
+      # About the Project Section
+      st.header("About the Project:")
+      st.markdown("""
+      This project leverages Streamlit, Google API, MongoDB to deliver a seamless and intuitive user experience for YouTube data analysis. Designed with simplicity and functionality in mind, our dashboard empowers users to make informed decisions based on comprehensive channel insights.
+      """)
+      st.markdown("[Google Developer Console](https://console.cloud.google.com/cloud-resource-manager?authuser=1)")
+      st.markdown("[Youtube API Reference](https://developers.google.com/youtube/v3/getting-started)")
+      st.markdown("[Mongodb Documentation](https://www.mongodb.com/docs/)")
+      st.markdown("[Streamlit Documentation](https://docs.streamlit.io/library/api-reference)")
+      st.markdown("[GitHub Repositories](https://github.com/selshiyaxavier/YouTube_data_analaysis.git)")
 
 if selected == "⚙️ Fetch and Export Data":
     url_input = st.text_input("Paste Youtube URL or Channel ID")
