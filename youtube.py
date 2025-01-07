@@ -756,7 +756,7 @@ if selected == "🏠 Home":
       st.markdown("[GitHub Repositories](https://github.com/selshiyaxavier/YouTube_data_analaysis.git)")
 
 if selected == "⚙️ Fetch and Export Data":
-  cl1,cl2,cl3 = st.columns([1.5,8,1])
+  cl1,cl2,cl3 = st.columns([1.5,8,1.5])
   with cl2:
       url_input = st.text_input("Paste Youtube URL or Channel ID")
       if not url_input:
@@ -836,7 +836,7 @@ if selected == "Channel Analysis":
           st.pyplot()
 
 if selected == "Video Analysis":
-  cl1,cl2,cl3 = st.columns([1.5,8,1])
+  cl1,cl2,cl3 = st.columns([1.5,8,1.5])
   with cl2:
       st.subheader("🔍 Let's explore YouTube Channels trends, and storiesbehind your favorite YouTube creators!")
       st.subheader("##")
