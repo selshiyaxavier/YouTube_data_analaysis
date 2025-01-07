@@ -718,7 +718,7 @@ with st.container():
         )
     
 if selected == "🏠 Home":
-  cl1,cl2,cl3 = st.columns([1,8,1])
+  cl1,cl2,cl3 = st.columns([2,8,1])
   with cl2:
       st.markdown(
       "<h2 style='text-align: center;'> Welcome to YouTube Data Harvesting and Analysis Project </h2>",
