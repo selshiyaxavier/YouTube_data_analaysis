@@ -2,7 +2,7 @@
 
 The YouTube Data Harvesting and Warehousing Project is an interactive dashboard designed to empower users to explore and analyze data from multiple YouTube channels effortlessly. Whether users are content creators, marketers, or analysts, this tool provides valuable insights to inform their decisions and strategies.
 
-## Check it out now ! [youtubedatawarhouse.streamlit.app](https://youtubedatawarhouse.streamlit.app/)
+## Check it out now ! [YouTube Dashboard](https://youtubedatawarhouse.streamlit.app/)
 
 ## Features
 
