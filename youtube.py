@@ -756,109 +756,115 @@ if selected == "🏠 Home":
       st.markdown("[GitHub Repositories](https://github.com/selshiyaxavier/YouTube_data_analaysis.git)")
 
 if selected == "⚙️ Fetch and Export Data":
-    url_input = st.text_input("Paste Youtube URL or Channel ID")
-    if not url_input:
-        st.warning("Please paste URL or ID to Fetch Data")
-    else:    
-        loading_text = "Loading"
-        bar = st.progress(0, text= loading_text)
-        for loading_bar in range(100):
-            time.sleep(0.01)
-            bar.progress(loading_bar + 1, text = loading_text)
-        time.sleep(1)
-        bar.empty() 
-        data = get_ID_or_data(url_input)
-        df = pd.DataFrame(data)
-        transpose = df.transpose()
-        transpose.columns = ["Channel Basic Details"]
-        col1,col2,col3,col4,col5 = st.columns(5)
-        with col1:
-            profile_Pic = get_Ch_Pic(url_input)
-            if profile_Pic is not None:
-                st.subheader("Channel Profile Picture")
-                st.image(profile_Pic,width = 250)
-        with col2:
-            if transpose is not None and not transpose.empty:
-                st.subheader("Channel Details")
-                st.write(transpose)
-        with col3:
-            id = get_ID(url_input)
-            Video_id = Get_Video_ids(id)
-            video_info = Get_Video_Info(Video_id)
-            df2 = pd.DataFrame(video_info)
-            if df2 is not None and not df2.empty:
-                st.subheader("Video Details")
-                st.write(df2)
-        with col4:
-            playlistinfo = Get_Playlist_deatils(id)
-            df3 = pd.DataFrame(playlistinfo)
-            if df3 is not None and not df3.empty:
-                st.subheader("Playlist Details")
-                st.write(df3)
-        with col5:
-            commentsinfo = Get_Video_Cmts(Video_id)
-            df4 = pd.DataFrame(commentsinfo)
-            if df4 is not None and not df4.empty:
-                st.subheader("Comment Details")
-                st.write(df4)         
-
-        if st.button("Store data in a MongoDB",type = "primary"):
-            push_data_mongodb = Chennal_Deatils(id)
-            if push_data_mongodb is not None:
-                st.success(push_data_mongodb)
+  cl1,cl2,cl3 = st.columns([1.5,8,1])
+  with cl2:
+      url_input = st.text_input("Paste Youtube URL or Channel ID")
+      if not url_input:
+          st.warning("Please paste URL or ID to Fetch Data")
+      else:    
+          loading_text = "Loading"
+          bar = st.progress(0, text= loading_text)
+          for loading_bar in range(100):
+              time.sleep(0.01)
+              bar.progress(loading_bar + 1, text = loading_text)
+          time.sleep(1)
+          bar.empty() 
+          data = get_ID_or_data(url_input)
+          df = pd.DataFrame(data)
+          transpose = df.transpose()
+          transpose.columns = ["Channel Basic Details"]
+          col1,col2,col3,col4,col5 = st.columns(5)
+          with col1:
+              profile_Pic = get_Ch_Pic(url_input)
+              if profile_Pic is not None:
+                  st.subheader("Channel Profile Picture")
+                  st.image(profile_Pic,width = 250)
+          with col2:
+              if transpose is not None and not transpose.empty:
+                  st.subheader("Channel Details")
+                  st.write(transpose)
+          with col3:
+              id = get_ID(url_input)
+              Video_id = Get_Video_ids(id)
+              video_info = Get_Video_Info(Video_id)
+              df2 = pd.DataFrame(video_info)
+              if df2 is not None and not df2.empty:
+                  st.subheader("Video Details")
+                  st.write(df2)
+          with col4:
+              playlistinfo = Get_Playlist_deatils(id)
+              df3 = pd.DataFrame(playlistinfo)
+              if df3 is not None and not df3.empty:
+                  st.subheader("Playlist Details")
+                  st.write(df3)
+          with col5:
+              commentsinfo = Get_Video_Cmts(Video_id)
+              df4 = pd.DataFrame(commentsinfo)
+              if df4 is not None and not df4.empty:
+                  st.subheader("Comment Details")
+                  st.write(df4)         
+  
+          if st.button("Store data in a MongoDB",type = "primary"):
+              push_data_mongodb = Chennal_Deatils(id)
+              if push_data_mongodb is not None:
+                  st.success(push_data_mongodb)
 
 if selected == "Channel Analysis":
-    st.subheader("🔍 Let's explore YouTube Channels trends, and storiesbehind your favorite YouTube creators!")
-    st.subheader("##")
-    st.markdown("In this section, we are going to compare the channels details which are stored in our database")
-    st.subheader("##")
-    col1,col2,col3 = st.columns([1,5,1])
-    # Channel statistics analysis
-    ch_stats_df = ch_stats()
-    Subscribers_Analysis_and_Comment(ch_stats_df)
-    subcomment = Subscribers_Analysis_and_Comment(ch_stats_df)
-    with col2:
-        st.success(subcomment)
-        st.pyplot()
-    Views_Analysis(ch_stats_df)
-    viewscomment = Views_Analysis(ch_stats_df)
-    with col2:
-        st.success(viewscomment)
-        st.pyplot()
-    Videos_Analysis(ch_stats_df)
-    videoscomment = Videos_Analysis(ch_stats_df)
-    with col2:
-        st.success(videoscomment)
-        st.pyplot()
+  cl1,cl2,cl3 = st.columns([1.5,8,1])
+  with cl2:
+      st.subheader("🔍 Let's explore YouTube Channels trends, and storiesbehind your favorite YouTube creators!")
+      st.subheader("##")
+      st.markdown("In this section, we are going to compare the channels details which are stored in our database")
+      st.subheader("##")
+      col1,col2,col3 = st.columns([1,5,1])
+      # Channel statistics analysis
+      ch_stats_df = ch_stats()
+      Subscribers_Analysis_and_Comment(ch_stats_df)
+      subcomment = Subscribers_Analysis_and_Comment(ch_stats_df)
+      with col2:
+          st.success(subcomment)
+          st.pyplot()
+      Views_Analysis(ch_stats_df)
+      viewscomment = Views_Analysis(ch_stats_df)
+      with col2:
+          st.success(viewscomment)
+          st.pyplot()
+      Videos_Analysis(ch_stats_df)
+      videoscomment = Videos_Analysis(ch_stats_df)
+      with col2:
+          st.success(videoscomment)
+          st.pyplot()
 
 if selected == "Video Analysis":
-    st.subheader("🔍 Let's explore YouTube Channels trends, and storiesbehind your favorite YouTube creators!")
-    st.subheader("##")
-    st.markdown("In this section, we are going to compare the video statistics which are stored in our database")
-    st.subheader("##")
-    # Video statistics analysis
-    drop_down = ch_stats_drop_down()
-    search_chennel_name = st.selectbox("Select a Channel for analysis", drop_down['Chennal_Name'].tolist())
-    col1,col2,col3 = st.columns([1,5,1])
-    if search_chennel_name:
-        video_stats_df = video_stats(search_chennel_name)
-        Best_Performing_Video(video_stats_df)
-        BPVcmts = Best_Performing_Video(video_stats_df)
-        with col2:
-            st.success(BPVcmts)
-            st.pyplot()
-        Least_Performing_Video(video_stats_df)
-        LPVcmts = Least_Performing_Video(video_stats_df)
-        with col2:  
-            st.success(LPVcmts)
-            st.pyplot()
-        videos_count_in_month(video_stats_df)
-        videocountcmts = videos_count_in_month(video_stats_df)
-        with col2:
-            st.success(videocountcmts)
-            st.pyplot()
-        videos_per_day(video_stats_df)
-        videosperdaycmts = videos_per_day(video_stats_df)
-        with col2:
-            st.success(videosperdaycmts)
-            st.pyplot()
+  cl1,cl2,cl3 = st.columns([1.5,8,1])
+  with cl2:
+      st.subheader("🔍 Let's explore YouTube Channels trends, and storiesbehind your favorite YouTube creators!")
+      st.subheader("##")
+      st.markdown("In this section, we are going to compare the video statistics which are stored in our database")
+      st.subheader("##")
+      # Video statistics analysis
+      drop_down = ch_stats_drop_down()
+      search_chennel_name = st.selectbox("Select a Channel for analysis", drop_down['Chennal_Name'].tolist())
+      col1,col2,col3 = st.columns([1,5,1])
+      if search_chennel_name:
+          video_stats_df = video_stats(search_chennel_name)
+          Best_Performing_Video(video_stats_df)
+          BPVcmts = Best_Performing_Video(video_stats_df)
+          with col2:
+              st.success(BPVcmts)
+              st.pyplot()
+          Least_Performing_Video(video_stats_df)
+          LPVcmts = Least_Performing_Video(video_stats_df)
+          with col2:  
+              st.success(LPVcmts)
+              st.pyplot()
+          videos_count_in_month(video_stats_df)
+          videocountcmts = videos_count_in_month(video_stats_df)
+          with col2:
+              st.success(videocountcmts)
+              st.pyplot()
+          videos_per_day(video_stats_df)
+          videosperdaycmts = videos_per_day(video_stats_df)
+          with col2:
+              st.success(videosperdaycmts)
+              st.pyplot()
