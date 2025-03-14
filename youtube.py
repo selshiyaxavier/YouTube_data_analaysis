@@ -39,7 +39,7 @@ def Api_connect():
 youtube = Api_connect()
 
 #Mongodb connection string
-uri = "mongodb+srv://selshiyaxavier:kanmani@cluster0.9wmcx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+uri = "mongodb+srv://selshiyaxavier:kanmani05@cluster0.9wmcx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
 # Send a ping to confirm a successful connection
